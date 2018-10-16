@@ -3,7 +3,7 @@
     "description": "class of rdkafka",
     "type": "lib",
     "require": {
-        "php": "^5.3.3 || ^7.0",
+        "php": ">=5.3.9"
     },
     "autoload": {
         "psr-4": {"phpRdkafka": ""}
