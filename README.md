@@ -19,7 +19,7 @@ rdkafka的下php-rdkafka的php类库
 ```
 # setTopic('qkl01', 0, $offset)  不设置，从最后一次服务器记录一次消费开始消费
 $offset = 86; //开始消费点
-$consumer = new \Vendors\Queue\Msg\Kafka\Consumer(['ip'=>'192.168.216.122']);
+$consumer = new \Msg\Kafka\Consumer(['ip'=>'192.168.216.122']);
 $consumer->setConsumerGroup('test-110-sxx1')
      ->setBrokerServer('192.168.216.122')
      ->setConsumerTopic()
@@ -41,7 +41,7 @@ $config = [
         //do biz something, don't exit() or die()
     }
 ];
-$producer = new \Vendors\Queue\Msg\Kafka\Producer($config);
+$producer = new \Msg\Kafka\Producer($config);
 $rst = $producer->setBrokerServer()
                  ->setProducerTopic('qkl01')
                  ->producer('qkl037', 90);
