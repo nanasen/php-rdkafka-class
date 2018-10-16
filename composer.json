@@ -6,6 +6,6 @@
         "php": ">=5.3.9"
     },
     "autoload": {
-        "psr-4": {"phpRdkafka": ""}
+        "psr-4": {"Msg\\Kafka\\": ""}
     }    
 }
