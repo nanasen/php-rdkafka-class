@@ -7,6 +7,6 @@
     },
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {"Msg\\Kafka\\": ""}
+        "psr-4": {"Msg\\Kafka\\": "./"}
     }    
 }
