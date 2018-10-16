@@ -5,7 +5,7 @@
  * Date: 2018/8/14
  * Time: 15:45
  */
-namespace Vendors\Queue\Msg\Kafka;
+namespace Msg\Kafka;
 
 use Think\Log;
 
