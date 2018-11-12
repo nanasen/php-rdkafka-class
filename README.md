@@ -36,19 +36,26 @@ $consumer->setConsumerGroup('test-110-sxx1')
 ### 生产
 ```
 $config = [
-    'ip'=>'192.168.216.122',
+    'ip'=>'127.0.0.1',
     'dr_msg_cb' => function($kafka, $message) {
-        var_dump((array)$message);
+        // var_dump((array)$message);
         //todo
         //do biz something, don't exit() or die()
     }
 ];
 $producer = new \Msg\Kafka\Producer($config);
-$rst = $producer->setBrokerServer()
-                 ->setProducerTopic('qkl01')
-                 ->producer('qkl037', 90);
+$topic = $producer->setBrokerServer()->setProducerTopic('test');
+// $rst = $producer->setBrokerServer()
+//                  ->setProducerTopic('test')
+//                  ->producer('test', 90);
+$start = microtime(true);
+for($i = 0; $i < 10; ++$i){
+    $topic->producer('test'.$i, 90);
+}
 
-var_dump($rst);
+while($producer->getOutQLength() > 0){
+    $producer->poll(50);
+}
 ```
 
 ## 更多配置
