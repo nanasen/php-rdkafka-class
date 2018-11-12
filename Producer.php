@@ -39,17 +39,17 @@ class Producer
 
         return $this;
     }
+    public function getOutQLength(){
+        return $this->producer->getOutQLen();
+    }
+    
+    public function poll($time){
+        $this->producer->poll(50);
+    }
 
     public function producer($msg, $option)
     {
         $this->producerTopic->produce(RD_KAFKA_PARTITION_UA, 0, $msg, $option);
-
-        $len = $this->producer->getOutQLen();
-        while ($len > 0) {
-            $len = $this->producer->getOutQLen();
-            $this->producer->poll(50);
-        }
-
         return true;
     }
 }
