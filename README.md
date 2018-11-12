@@ -19,8 +19,8 @@ PS:原作者-->https://github.com/qkl9527/php-rdkafka-class
 ## 使用
 ### 消费
 ```
-# setTopic('qkl01', 0, $offset)  不设置，从最后一次服务器记录一次消费开始消费
-$offset = 86; //开始消费点
+# setTopic('qkl01', 0, $offset)  设置-1，从最后一次服务器记录一次消费开始消费
+$offset = -1; //开始消费点
 $consumer = new \Msg\Kafka\Consumer(['ip'=>'192.168.216.122']);
 $consumer->setConsumerGroup('test-110-sxx1')
      ->setBrokerServer('192.168.216.122')
